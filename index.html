@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>サイトタイトル</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="（ページ内容の概要文）">
+    
+    <link rel="shortcut icon" href="assets/img/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+	
+    <link rel="stylesheet" href="assets/css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/index.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/animation.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- =========グーグルアナリティクスのソースコード========= -->
+	    
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html"><img src="assets/img/logo.png" alt=""/></a></h1>
+        <div class="button">
+                <div><span></span><span></span><span></span></div>
+            </div>
+        <nav>
+            <ul class="clearfix" >
+                <li><a href="index.html">Home</a></li>
+                <li><a href="2nd.html">Menu01</a></li>
+                <li><a href="2nd.html">Menu02</a></li>
+				<li><a href="2nd.html">Menu03</a></li>
+				<li><a href="2nd.html">Menu04</a></li>
+				<li><a href="2nd.html">Menu05</a></li>
+				<li><a href="2nd.html">Menu06</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article id="image">           
+			<div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div id="image01" class="slide-img"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="image02" class="slide-img"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="image03" class="slide-img"></div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div id="image04" class="slide-img"></div>
+                    </div>
+                </div>
+            </div>
+            <div id="message">
+                <p id="text01">テキスト（大）</p>
+                <p id="text02">テキスト（小）</p>
+            </div>            
+            <div id="pattern"></div>
+        </article>
+        <article id="news">
+            <h2>NEWS&TOPICS</h2>
+            <dl>
+                <dt>
+                    <p>日付</p>
+                </dt>
+                <dd>
+                    <p>テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。</p>
+                </dd>
+                <dt>
+                    <p>日付</p>
+                </dt>
+                <dd>
+                    <p>テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。テキスト。</p>
+                </dd>
+            </dl>
+        </article>
+        <article id="contents">
+            <section class="clearfix">
+                <div>
+                    <a href="2nd.html"></a>
+                    <h3 id="scope_committee">Menu01</h3>
+                </div>
+                <div>
+                    <a href="2nd.html"></a>
+                    <h3 id="submission">Menu02</h3>
+                </div>
+                <div>
+                    <a href="2nd.html"></a>
+                    <h3 id="program">Menu03</h3>
+                </div>
+                <div>
+                    <a href="2nd.html"></a>
+                    <h3 id="registration">Menu04</h3>
+                </div>
+                <div>
+                    <a href="2nd.html"></a>
+                    <h3 id="venue">Menu05</h3>
+                </div>
+                <div>
+                    <a href="2nd.html"></a>
+                    <h3 id="contact">Menu06</h3>
+                </div>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <article class="clearfix">
+            <p>サイトタイトル</p>
+            <small>&copy; copyright</small>
+        </article>
+    </footer>
+    
+    <a href="#" id="page-top"><i class="fa fa-arrow-up"></i></a>
+    
+	
+	<!--jquery-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+    <!-- Swiper JS -->
+    <script src="assets/js/swiper.min.js"></script>
+    <!-- Initialize Swiper -->
+    <script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        paginationClickable: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        spaceBetween: 30,
+        effect: 'fade',
+        autoplay:4000,
+        autoplayDisableOnInteraction: false
+    });
+    </script>
+    
+    <!--スマホメニュー--> 
+    <script>
+        $(function() {
+            var $header = $('header');
+            $('.button').click(function(){
+                $header.toggleClass("open");
+            });
+        });
+    </script>
+	<!--スマホメニュー　body固定--> 
+    <script>
+        $(function(){
+            var scrollPos;
+            $('.button').on('click', function() {
+                if($('body').hasClass('fixed')){
+                    $('body').removeClass('fixed').css('top',0 + 'px');
+                    window.scrollTo( 0 , scrollPos );
+                }else{
+                    scrollPos = $(window).scrollTop();
+                    $('body').addClass('fixed').css('top',-scrollPos + 'px');
+                }
+            });
+        });
+    </script>
+    
+    <!--アニメーション-->
+    <script>
+        function scrollChk(){
+            var scroll = $(window).scrollTop();
+            var windowHeight = $(window).height();
+            
+            jQuery('.scroll-animation').not('.active').each(function(){
+                var pos = $(this).offset().top;
+                
+                if (scroll > pos - windowHeight){
+                    $(this).addClass("active");
+                }
+            });
+        }
+        $(window).scroll(function (){
+            scrollChk();
+        });
+        $('body').on('touchmove', function() {
+            scrollChk();
+        });
+    </script>
+        
+    <!--スクロールでトップへ--> 
+    <script>
+        $(function() {
+            var topBtn = $('#page-top');    
+            topBtn.hide();
+            //スクロールが100に達したらボタン表示
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    topBtn.fadeIn();
+                } else {
+                    topBtn.fadeOut();
+                }
+            });
+            //スクロールしてトップ
+            topBtn.click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 500);
+                return false;
+            });
+        });
+    </script>
+    
+    <!--アイコン-->
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"></script>
+</body>
+</html>

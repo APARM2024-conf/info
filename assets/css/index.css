@@ -53,7 +53,9 @@ main{width:100%;margin: 0 auto;}
     main #contents section div #venue{background:url("../img/venue01.png") no-repeat;background-position:50% 0%;background-size:80px auto;}
     main #contents section div #contact{background:url("../img/contact01.png") no-repeat;background-position:50% 0%;background-size:80px auto;} 
     main #contents section div:hover {color:#033492;}
-        
+      
+    main #cfp{width:1000px;margin: 0 auto;padding: 30px 0;} 
+    main #scope td{display: padding: 3px;width: 330px;height: 5px;} 
 }
 
 @media screen and (max-width:1050px) {
@@ -105,5 +107,8 @@ main{width:100%;margin: 0 auto;}
     main #contents section div #venue::before{content: '';display: block;vertical-align:middle;width:100%;height:40px;margin:0 0px 0 0;padding: 0 0px 0 0; background:url(../img/venue01.png) no-repeat;background-position:50% 0%; background-size:auto 100%;}
     main #contents section div #contact::before{content: '';display:block;vertical-align:middle;width:100%;height:45px;margin:0 0px 0 0;padding: 0 0px 0 0; background:url(../img/contact01.png) no-repeat;background-position:50% 0%; background-size:auto 100%;}
     main #contents section div:hover {color:#033492;}
+
+    main #cfp{width:80%;margin: 0 auto;padding: 20px 0;}
+    main #cfp td{display: padding: 3px;width: 33%;height: 5px;}
            
 }

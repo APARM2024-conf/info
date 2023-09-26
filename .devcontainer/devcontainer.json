@@ -1,0 +1,17 @@
+{
+    "name": "web",
+    "dockerComposeFile": "./docker-compose.yml",
+    "service": "web",
+    "workspaceFolder": "/usr/share/nginx",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "mhutchie.git-graph"
+            ],
+            "settings": {
+                "editor.wordWrap": "on",
+                "workbench.colorTheme": "Default Light Modern"
+            }
+        }
+    }
+}

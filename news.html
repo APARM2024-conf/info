@@ -1,0 +1,122 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>News</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">   
+    <meta name="description" content="（ページ内容の概要文）">
+    
+    <link rel="shortcut icon" href="assets/img/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+	
+    <link rel="stylesheet" href="assets/css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/2nd.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/animation.css" type="text/css"/>
+    <link rel="stylesheet" href="assets/css/swiper.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->	
+	<!-- =========グーグルアナリティクスのソースコード========= -->
+    
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.html"><img src="assets/img/logo.png" alt="2020 International Conference on Emerging Technologies for Communications"/></a></h1>
+        <div class="button">
+                <div><span></span><span></span><span></span></div>
+            </div>
+        <nav>
+            <ul class="clearfix" >
+                <li><a href="index.html">Home</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="committees.html">Committees</a></li>
+		<li><a href="registration.html">Registration</a></li>
+		<li><a href="program.html">Program</a></li>
+		<li><a href="keynote.html">Keynote Speakers</a></li>
+		<li><a href="si.html">Special Issues</a></li>
+		<li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="id_name">
+        <div class="title">
+            <div>
+                <h2>News</h2>
+            </div>
+        </div>
+	<section>
+            <h3>31 August</h3>
+            <p class="text01">The 1st <a href="https://aparm2024-conf.github.io/info/APARM2024flyer_1st%20CFP.pdf">CFP</a> is opened.</p>
+        </section>
+        <section>
+            <h3>31 August</h3>
+            <p class="text01">Scheduled to open in August 2023</p>
+        </section>
+    </main>
+    <footer>
+        <article class="clearfix">
+            <p>APARM 2024</p>
+            <small>&copy; copyright APARM 2024</small>
+        </article>
+    </footer>
+    
+    <a href="#" id="page-top"><i class="fa fa-arrow-up"></i></a>
+    
+	
+	<!--jquery-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	
+    <!--スマホメニュー--> 
+    <script>
+        $(function() {
+            var $header = $('header');
+            $('.button').click(function(){
+                $header.toggleClass("open");
+            });
+        });
+    </script>
+	<!--スマホメニュー　body固定--> 
+    <script>
+        $(function(){
+            var scrollPos;
+            $('.button').on('click', function() {
+                if($('body').hasClass('fixed')){
+                    $('body').removeClass('fixed').css('top',0 + 'px');
+                    window.scrollTo( 0 , scrollPos );
+                }else{
+                    scrollPos = $(window).scrollTop();
+                    $('body').addClass('fixed').css('top',-scrollPos + 'px');
+                }
+            });
+        });
+    </script>
+    
+    <!--スクロールでトップへ--> 
+    <script>
+        $(function() {
+            var topBtn = $('#page-top');    
+            topBtn.hide();
+            //スクロールが100に達したらボタン表示
+            $(window).scroll(function () {
+                if ($(this).scrollTop() > 100) {
+                    topBtn.fadeIn();
+                } else {
+                    topBtn.fadeOut();
+                }
+            });
+            //スクロールしてトップ
+            topBtn.click(function () {
+                $('body,html').animate({
+                    scrollTop: 0
+                }, 500);
+                return false;
+            });
+        });
+    </script>
+    
+    <!--アイコン-->
+    <script defer src="https://use.fontawesome.com/releases/v5.6.3/js/all.js"></script>
+</body>
+</html>

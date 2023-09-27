@@ -1,0 +1,70 @@
+@charset "UTF-8";
+/* CSS Document */
+/*
+html { width: 100%;height: 100%;margin: 0;	padding: 0;} */
+body{width:100%;height: 100%;margin: 0;font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;-webkit-text-size-adjust: 100%;}
+body.fixed {	position: fixed;height: 100vh;}
+.mincho{ font-family: "游明朝", YuMincho, "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif;}
+.clearfix:after{content: "";clear: both;display: block;}
+:hover{-webkit-transition: all 0.3s ease;-moz-transition: all 0.3s ease;-o-transition: all 0.3s ease;transition: all  0.3s ease;}
+/*a:hover{opacity: 0.5; }*/
+
+header h1 a:hover{opacity: 0.5; }
+
+#page-top{ display:block;width:70px;height:54px;padding-top:16px; font-size:24px;text-align: center;text-decoration: none; color:white;position:fixed;right:20px;bottom:20px;border-radius: 35px; background:#49d6ca; z-index: 9999;}
+#page-top:hover{opacity: 0.5; }
+
+@media screen and (min-width:1051px) {
+    header{width:100%;margin:0 auto;border-top: 6px solid #033492;padding:30px 0 0px 0;}
+    header h1{width:1000px;margin: 0 auto 20px auto;padding:0px 0 0px 0;}
+    header h1 img{width:260px;}
+    
+    header nav{}
+    header nav ul{margin: 0 auto 10px auto; list-style: none;text-align: center;}
+    header nav ul li{display: inline-block; margin: 0}
+    header nav ul li a{display:block; position: relative;  padding: 0 22px 10px 22px;float: left;text-align: center;text-decoration: none;color: black;font-size: 17px;letter-spacing:1px;}
+    header nav ul li a::after {position: absolute;bottom:0px;left: 40%;content: '';width:20%;max-width: 20px; height:3px;background:#033492;transform: scale(0, 1);  transform-origin: center top;  transition: transform .3s;}
+    header nav ul li a:hover{color: #033492}
+    header nav ul li a:hover::after {  transform: scale(1, 1);}
+    
+    .button {display: none} 
+    
+    footer{width: 100%;margin: 0 auto;padding: 0px 0;}
+    footer article{width: 1000px;margin: 0 auto;padding: 30px 0;}
+    footer article p{margin: 0 ;padding: 0px 0;font-size: 14px;letter-spacing: 1px;font-weight: normal;float: left}
+    footer article small{margin: 0 ;padding:25px 0 0px 0;font-size: 12px;letter-spacing: 1px;float: right}
+}
+
+@media screen and (max-width:1050px) { 
+    header{position: relative;width:100%;height: 90px; margin:0;padding:0px 0;border-top: 3px solid #033492;}
+    header h1{position:absolute;top:25px;left: 5%;margin: 0 auto;padding:0px 0 0px 0;}
+    header h1 img{width:40%;max-width: 400px;}
+    
+    header nav{display: none;	width: 100%;	height:100vh;	position:fixed;	top:90px;left: 0;background:rgba(3,52,146,0.8);z-index: 999;}
+    header nav ul{width:100%;margin:0 auto;padding:0;position: fixed;top:90px;left:0%;height:75vh;overflow-y: scroll;	-webkit-overflow-scrolling: touch;	overflow-scrolling: touch;}
+    header nav ul li{display:inherit; width: 100%; margin: 0;border-bottom: 1px solid white;background:rgba(3,52,146,1.0);}
+    header nav ul li:last-child{border-bottom:none}
+    header nav ul li a{display: block; padding:20px 5% 20px 5%;float:inherit;text-align: center;text-decoration: none;color:white;font-size: 16px;letter-spacing:1px;}
+    header nav ul li a:hover{background:#49d6ca;color:white}
+    
+    .button{display:block;position:absolute;top:0;right: 0;/*position: fixed;	right:0%;top:0px;*/width:100px;height:100%;}
+    .button div{position: relative;right:0%;top:0px;width:100px;height:90px;padding:0px 0 0 0px;margin: 0 0 0 auto;cursor:pointer;text-align: center;letter-spacing: 1px; font-size:14px;color: white; }
+    .button div span {display:block;position: absolute;	height:3px;border-radius: 2px;	width:50%;	background:#033492;right:25%;	-webkit-transition: .35s ease-in-out;	-moz-transition: .35s ease-in-out;	transition: .35s ease-in-out;}
+    .button div span:nth-child(1) {	top:40%;}
+    .button div span:nth-child(2) {	top:50%;}
+    .button div span:nth-child(3) {	top:60%;}    
+    
+    .open .button div{ background:#49d6ca;} 
+    .open .button div span{display:block;}
+    .open .button div span:nth-child(1) {	top: 50%;	-webkit-transform: rotate(45deg);	-moz-transform: rotate(45deg);	transform: rotate(45deg); background:white;}
+    .open .button div span:nth-child(2) {	width: 0;	left: 50%;}
+    .open .button div span:nth-child(3) {	top:50%;	-webkit-transform: rotate(-45deg);	-moz-transform: rotate(-45deg);	transform: rotate(-45deg); background:white;}
+    .open nav {	display: block;	animation-duration: 0.6s;	animation-name: fade-in;} 
+    @keyframes fade-in { from { opacity:0.1;}        to { opacity:1;}    }  
+    
+    footer{width:100%;margin: 0 auto;padding: 0px 0;}
+    footer article{width:80%;margin: 0 auto;padding: 20px 0;}
+    footer article p{width: 100%;margin: 0 auto 20px auto;padding: 0px 0;font-size: 13px;letter-spacing: 0px;line-height: 20px; font-weight: normal;}
+    footer article small{display: block; width: 100%;margin: 0 auto;padding:0px 0 0px 0;font-size: 11px;letter-spacing: 0px;text-align: center}    
+    
+}

@@ -1,0 +1,114 @@
+@charset "UTF-8";
+/* CSS Document */
+
+main{width:100%;margin: 0 auto;}
+
+@media screen and (min-width:1051px) {
+    /*スライド*/
+    main #image{position: relative;width:100%;height:450px;margin: 0 auto;}
+    
+    .swiper-container{position: absolute;top:0;left: 0;width: 100%;height:100%;margin:0px auto 0 auto;padding:0px 0 0 0;/* z-index:-1*/}
+    .swiper-slide-active .slide-img,
+    .swiper-slide-duplicate-active .slide-img,
+    .swiper-slide-prev .slide-img{ animation: zoomUp 10s linear 0s 1 normal both; }
+    .slide-img{width:100%;}    
+    #image01{height: 100%;background: url("../img/slide01.jpg") no-repeat;background-position: 50% 50%;background-size:1500px auto}
+    #image02{height: 100%;background: url("../img/slide02.jpg") no-repeat;background-position: 50% 50%;background-size:1500px auto}
+    #image03{height: 100%;background: url("../img/slide03.jpg") no-repeat;background-position: 50% 50%;background-size:1500px auto}
+    #image04{height: 100%;background: url("../img/slide04.jpg") no-repeat;background-position: 50% 50%;background-size:1500px auto}
+    
+    main #image #message{position: absolute;top:30%;left: 0;width: 100%; margin: 0;z-index: 3;}
+    main #image #message #text01{width: 1000px; margin: 0 auto 20px auto;padding:0;font-size: 40px;letter-spacing:2px;line-height: 45px; color: white;text-shadow:0px 1px 5px rgba(000,000,00,0.8);}
+    main #image #message #text02{width: 1000px; margin: 0 auto;padding:0;font-size: 30px;letter-spacing: 2px;line-height:40px;color: white;text-shadow:0px 1px 5px rgba(000,000,00,0.8);}
+    
+    main #image #pattern{position: absolute;top:0%;left: 70%;width:30%;height: 450px; margin: 0;z-index:4;background:url("../img/slide_illustration.png") no-repeat;background-position:00% 80%;/*background-size:;*/}
+    
+    main #news{width:1000px;margin: 0 auto;padding: 30px 0;}
+    main #news h2{width:230px;margin: 0 auto 0 0;padding:16px 0 6px 0;background: #033492;text-align: center;color: white;font-size:16px;letter-spacing:2px;font-weight: normal;border-radius: 10px 10px 0 0 ;} 
+    main #news dl{display:flex; flex-wrap: wrap;width:100%;margin: 0 auto 0px auto;font-size: 14px;letter-spacing: 1px; line-height: 24px;border-top: 2px solid  #033492}
+    main #news dl dt{width:15%; height:auto; margin:0px auto 0px 0;padding:15px 0 15px 0; border-bottom: 1px solid #b5b5b6;}
+    main #news dl dt:last-of-type{border-bottom:none;}
+    main #news dl dt p{ margin:0;padding:5px 0 3px 0;background: #49d6ca;color: white;text-align: center;border-radius: 15px;}
+    main #news dl dd{width:83%; height:auto; margin:0px 0 0px auto;padding:15px 0 15px 2%;border-bottom: 1px solid #b5b5b6;}
+    main #news dl dd:last-of-type{border-bottom:none;}
+    main #news dl dd p{margin:0;padding:5px 0 5px 0px;}
+    main #news dl dd p a{color: coral }
+    
+    main #contents{width: 100%;margin: 0 auto; padding:0px 0;background: #0a266b;}
+    main #contents section{width: 1000px;margin: 0 auto;padding: 30px 0;}
+    main #contents section div{position: relative;width: 330px;height:150px; margin: 0 5px 5px 0;padding: 0px 0;background:white url("../img/pattern01.png") repeat; float: left;display: inline-block;border: 0px solid #fff;outline: none;transition: all .3s;}
+    main #contents section div::before,main #contents section div::after{position: absolute;top: 0px;right: 0px;bottom: 0px;left: 0px;z-index: 0;content: ''; transition: all .3s;}
+    main #contents section div::before {border-top:8px solid #baebff;  border-bottom: 8px solid #baebff;  transform: scale(0, 1);}
+    main #contents section div::after {  border-right: 8px solid #baebff;        border-left:8px solid #baebff;        transform: scale(1, 0);    }
+    main #contents section div:hover::after,main #contents section div:hover::before { transform: scale(1);}
+    main #contents section div:nth-child(3n){margin: 0 0px 0 0;}
+    main #contents section div a{display: inline;position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 2;}
+    main #contents section div a::before{content: '';display: inline-block;width:100%;height:113px;margin:0 ;padding: 0; background: url(../img/brackets01.png) no-repeat;background-position: 0% 0%; background-size:30px auto;}
+    main #contents section div a::after{content: '';display: inline-block;width:100%;height:30px;margin:0 ;padding: 0; background: url(../img/brackets02.png) no-repeat;background-position:100% 0%; background-size:30px auto;}
+    main #contents section div h3{position: absolute;top: 15%;left: 0;width: 100%;margin: 0 ;padding:80px 0 0 0;text-align: center;font-size: 18px;letter-spacing: 0px;/*font-weight: normal;*/z-index: 1;}
+    main #contents section div #scope_committee{background:url("../img/scope_committee01.png") no-repeat;background-position:50% 0%;background-size:80px auto;}
+    main #contents section div #submission{background:url("../img/submission01.png") no-repeat;background-position:50% 0%;background-size:80px auto;}
+    main #contents section div #program{background:url("../img/program01.png") no-repeat;background-position:50% 0%;background-size: 80px auto;}
+    main #contents section div #registration{background:url("../img/registration01.png") no-repeat;background-position:50% 0%;background-size: 80px auto;}
+    main #contents section div #venue{background:url("../img/venue01.png") no-repeat;background-position:50% 0%;background-size:80px auto;}
+    main #contents section div #contact{background:url("../img/contact01.png") no-repeat;background-position:50% 0%;background-size:80px auto;} 
+    main #contents section div:hover {color:#033492;}
+      
+    main #cfp{width:1000px;margin: 0 auto;padding: 30px 0;} 
+    main #scope td{display: padding: 3px;width: 330px;height: 5px;} 
+}
+
+@media screen and (max-width:1050px) {
+    main #image{position: relative;width:100%;height:250px;margin: 0 auto;}
+    
+    .swiper-container{position: absolute;top:0;left: 0;width: 100%;height:100%;margin:0px auto 0 auto;padding:0px 0 0 0;/* z-index:-1*/}
+    .swiper-slide-active .slide-img,
+    .swiper-slide-duplicate-active .slide-img,
+    .swiper-slide-prev .slide-img{ animation: zoomUp 10s linear 0s 1 normal both; }
+    .slide-img{width:100%;}    
+    #image01{height: 100%;background: url("../img/slide01.jpg") no-repeat;background-position: 50% 50%;background-size:cover}
+    #image02{height: 100%;background: url("../img/slide02.jpg") no-repeat;background-position: 50% 50%;background-size:cover}
+    #image03{height: 100%;background: url("../img/slide03.jpg") no-repeat;background-position: 50% 50%;background-size:cover}
+    #image04{height: 100%;background: url("../img/slide04.jpg") no-repeat;background-position: 50% 50%;background-size:cover}
+    
+    main #image #message{position: absolute;top:12%;left: 0;width: 100%; margin: 0;z-index: 3;}
+    main #image #message #text01{width: 80%; margin: 0 auto 15px auto;padding:0;font-size: 22px;letter-spacing:1px;line-height: 25px; color: white;/*text-shadow:0px 1px 5px rgba(125,121,71,0.8);*/}
+    main #image #message #text02{width: 80%; margin: 0 auto;padding:0;font-size: 16px;letter-spacing:0px;line-height:20px;color: white;/*text-shadow:0px 1px 5px rgba(125,121,71,0.8);*/}
+    
+    main #image #pattern{position: absolute;top:0%;left: 70%;width:30%;height: 300px; margin: 0;z-index:4;background:url("../img/slide_illustration.png") no-repeat;background-position:00% 10%;background-size:auto 110%;}
+    
+    main #news{width:80%;margin: 0 auto;padding: 20px 0;}
+    main #news h2{width:60%;max-width: 300px; margin: 0 auto 0 0;padding:12px 0 2px 0;background: #033492;text-align: center;color: white;font-size:16px;letter-spacing:1px;font-weight: normal;border-radius: 10px 10px 0 0 ;} 
+    main #news dl{display:flex; flex-wrap: wrap;width:100%;margin: 0 auto 0px auto;border-top: 2px solid #033492;}    
+    main #news dl dt{width:100%; height:auto; margin:0px auto 0px 0;padding: 15px 0 10px 0;}
+    main #news dl dt p{ width:30%; margin:0;padding:3px 10px 3px 10px;background: #49d6ca;color: white;text-align: center;border-radius: 15px;font-size: 13px;letter-spacing: 1px; line-height: 24px;}
+    main #news dl dd{width:100%; height:auto; margin:0px 0 0px auto;padding: 0px 0 15px 0;border-bottom: 1px solid #b5b5b6;}
+    main #news dl dd:last-of-type{border:none;}
+    main #news dl dd p{margin:0;padding:0px 0;font-size: 14px;letter-spacing: 0px; line-height: 22px;}
+    main #news dl dd p a{color: coral }
+    
+    main #contents{width: 100%;margin: 0 auto; padding:0px 0;background: #0a266b;}
+    main #contents section{width: 80%;margin: 0 auto;padding: 30px 0;}
+    main #contents section div{position: relative;width: 100%;height:110px; margin: 0 0px 5px 0;padding: 0px 0;background:white url("../img/pattern01.png") repeat; float: left;display: inline-block;border: 0px solid #fff;outline: none;transition: all .3s;}
+    main #contents section div::before,main #contents section div::after{position: absolute;top: 0px;right: 0px;bottom: 0px;left: 0px;z-index: 0;content: ''; transition: all .3s;}
+    main #contents section div::before {border-top:8px solid #baebff;  border-bottom: 8px solid #baebff;  transform: scale(0, 1);}
+    main #contents section div::after {  border-right: 8px solid #baebff;        border-left:8px solid #baebff;        transform: scale(1, 0);    }
+    main #contents section div:hover::after,main #contents section div:hover::before { transform: scale(1);}
+    
+    main #contents section div a{display: inline;position: absolute;top: 0;left: 0;width: 100%;height: 100%;z-index: 2;}
+    main #contents section div a::before{content: '';display: inline-block;width:100%;height:75px;margin:0 ;padding: 0; background: url(../img/brackets01.png) no-repeat;background-position: 0% 0%; background-size:30px auto;}
+    main #contents section div a::after{content: '';display: inline-block;width:100%;height:30px;margin:0 ;padding: 0; background: url(../img/brackets02.png) no-repeat;background-position:100% 0%; background-size:30px auto;}
+    main #contents section div h3{position: absolute;top: 20%;left: 10%;width:80%;margin: 0 ;padding:0px 0 0px 0px;text-align: center; /*font-weight: normal;*/font-size:17px;letter-spacing: 0px;z-index: 1;}
+    
+    main #contents section div #scope_committee::before{content: '';display:block;vertical-align:middle;width:100%;height:40px;margin:0 0px 0 0;padding: 0 0px 0 0; background:url(../img/scope_committee01.png) no-repeat;background-position:50% 00%; background-size:auto 100%;}
+    main #contents section div #submission::before{content: '';display: block;vertical-align:middle;width:100%;height:40px;margin:0 0px 0 0;padding: 0 0px 0 0; background:url(../img/submission01.png) no-repeat;background-position:50% 0%; background-size:auto 100%;}
+    main #contents section div #program::before{content: '';display: block;vertical-align:middle;width:100%;height:45px;margin:0 0px 0 0;padding: 0 0px 0 0; background:url(../img/program01.png) no-repeat;background-position:50% 0%; background-size:auto 100%;}
+    main #contents section div #registration::before{content: '';display: block;vertical-align:middle;width:100%;height:45px;margin:0 0px 0 0;padding: 0 0px 0 0; background:url(../img/registration01.png) no-repeat;background-position:50% 0%; background-size:auto 100%;}
+    main #contents section div #venue::before{content: '';display: block;vertical-align:middle;width:100%;height:40px;margin:0 0px 0 0;padding: 0 0px 0 0; background:url(../img/venue01.png) no-repeat;background-position:50% 0%; background-size:auto 100%;}
+    main #contents section div #contact::before{content: '';display:block;vertical-align:middle;width:100%;height:45px;margin:0 0px 0 0;padding: 0 0px 0 0; background:url(../img/contact01.png) no-repeat;background-position:50% 0%; background-size:auto 100%;}
+    main #contents section div:hover {color:#033492;}
+
+    main #cfp{width:80%;margin: 0 auto;padding: 20px 0;}
+    main #cfp td{display: padding: 3px;width: 33%;height: 5px;}
+           
+}

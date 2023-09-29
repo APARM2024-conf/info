@@ -68,3 +68,24 @@ header h1 a:hover{opacity: 0.5; }
     footer article small{display: block; width: 100%;margin: 0 auto;padding:0px 0 0px 0;font-size: 11px;letter-spacing: 0px;text-align: center}    
     
 }
+
+.update-shadow{
+    display: inline-block;
+    filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.9));
+    background-position: center center;
+    border-radius: 50%;
+    background-size: contain;
+    user-select:none;
+    -webkit-user-select:none;
+    -ms-user-select: none;
+    -moz-user-select:none;
+    -khtml-user-select:none;
+    -webkit-user-drag:none;
+    -khtml-user-drag:none;
+    -webkit-touch-callout:none;
+    -webkit-user-select:none;
+    -moz-touch-callout:none;
+    -moz-user-select:none;
+    touch-callout:none;
+    user-select:none;
+}

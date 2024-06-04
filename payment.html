@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conference Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 50px;
+            padding: 0;
+            /* display: flex; */
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #4CAF50;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+        }
+
+        label {
+            /* display: block; */
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="radio"],
+        input[type="number"] {
+            margin-bottom: 10px;
+        }
+
+        input[type="number"] {
+            width: 10%;
+            padding: 8px;
+            margin-top: 4px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .radio-group {
+            margin-bottom: 10px;
+        }
+
+        .radio-group label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Conference Registration</h1>
+
+<br></br>
+
+<form id="registrationForm" action="https://sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+    <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="upload" value="1">
+    <input type="hidden" name="business" value="sb-6ie6631042567@business.example.com">
+    <input type="hidden" name="currency_code" value="JPY">
+    <input type="hidden" name="return" value="http://aparm2024-conf.github.io/info/index.html">
+    <input type="hidden" name="cancel_return" value="http://aparm2024-conf.github.io/info/index.html">
+
+    <!-- Conference Type Selection -->
+    <div class="radio-group">
+        <label>Conference Type:</label><br></br>
+
+        <input type="radio" id="Regular" name="conferenceType" value="Regular" required>
+        <label for="Regular">Regular - 50,000JPY</label><br>
+        <input type="radio" id="student" name="conferenceType" value="Student" required>
+        <label for="student">Student - 30,000JPY</label>
+    </div>
+
+    <!-- Additional Banquet Ticket -->
+    <label for="banquetTickets">Additional Banquet Tickets (15,000JPY each):</label>
+    <input type="number" id="banquetTickets" name="banquetTickets" value="0" min="0">
+    <br><br>
+
+    <!-- Additional Excursion Ticket -->
+    <label for="excursionTickets">Additional Excursion Tickets (5,000JPY each):</label>
+    <input type="number" id="excursionTickets" name="excursionTickets" value="0" min="0">
+    <br><br>
+
+    <!-- Pay Now Button -->
+    <input type="submit" value="Add Cart" onclick="return prepareCart()">
+</form>
+
+<script>
+function prepareCart() {
+    const conferenceType = document.querySelector('input[name="conferenceType"]:checked').value;
+    const banquetTickets = parseInt(document.getElementById("banquetTickets").value);
+    const excursionTickets = parseInt(document.getElementById("excursionTickets").value);
+
+    const form = document.getElementById('registrationForm');
+
+    // Clear existing form elements
+    form.innerHTML = ''; 
+
+    form.innerHTML += '<input type="hidden" name="cmd" value="_cart">';
+    form.innerHTML += '<input type="hidden" name="upload" value="1">';
+    form.innerHTML += '<input type="hidden" name="business" value="sb-6ie6631042567@business.example.com">';
+    form.innerHTML += '<input type="hidden" name="currency_code" value="JPY">';
+    form.innerHTML += '<input type="hidden" name="return" value="http://aparm2024-conf.github.io/info/index.html">';
+    form.innerHTML += '<input type="hidden" name="cancel_return" value="http://aparm2024-conf.github.io/info/index.html">';
+
+    form.innerHTML += '<h2>Your cart</h2>';
+    total = 0;
+
+    if (conferenceType === "Regular") {
+        form.innerHTML += '<input type="hidden" name="item_name_1" value="Regular Registration">';
+        form.innerHTML += '<label>Regular Registration: JPY 50,000</label><br></br>';
+        form.innerHTML += '<input type="hidden" name="amount_1" value="50000">';
+        total += 50000;
+    } else if (conferenceType === "Student") {
+        form.innerHTML += '<input type="hidden" name="item_name_1" value="Student Registration">';
+        form.innerHTML += '<label>Student Registration: JPY 30,000</label><br></br>';
+        form.innerHTML += '<input type="hidden" name="amount_1" value="30000">';
+        total += 30000;
+    }
+
+    form.innerHTML += '<label>Additional Banquet Tickets: JPY 15,000 * ' + banquetTickets + '</label><br></br>';
+    if (banquetTickets > 0) {
+        form.innerHTML += '<input type="hidden" name="item_name_2" value="Additional Banquet Ticket">';
+        form.innerHTML += `<input type="hidden" name="amount_2" value="15000">`;
+        form.innerHTML += `<input type="hidden" name="quantity_2" value="${banquetTickets}">`;
+        total += banquetTickets * 15000;
+    }
+
+    form.innerHTML += '<label>Additional Excursion Tickets: JPY 5,000 * ' + excursionTickets + '</label><br></br>';
+    if (excursionTickets > 0) {
+        const ticketIndex = banquetTickets > 0 ? 3 : 2;  // Adjust index based on previous inputs
+        form.innerHTML += `<input type="hidden" name="item_name_${ticketIndex}" value="Additional Excursion Ticket">`;
+        form.innerHTML += `<input type="hidden" name="amount_${ticketIndex}" value="5000">`;
+        form.innerHTML += `<input type="hidden" name="quantity_${ticketIndex}" value="${excursionTickets}">`;
+        total += excursionTickets * 5000;
+    }
+
+    form.innerHTML += '<hr></hr>';
+    form.innerHTML += '<label>Total: JPY ' + total.toLocaleString('en-US') + '</label>';
+
+    form.innerHTML += '<input type="submit" value="Pay Now with PayPal">';
+
+    return true;
+}
+</script>
+
+</body>
+</html>

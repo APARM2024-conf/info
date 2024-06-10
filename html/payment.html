@@ -9,11 +9,10 @@
 
 <h1>APARM2024 Registration</h1>
 
-<br></br>
-
 <!-- <form id="registrationForm" action="https://sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top"> -->
+<div  class="container">
 <form id="registrationForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-        <input type="hidden" name="cmd" value="_cart">
+    <input type="hidden" name="cmd" value="_cart">
     <input type="hidden" name="upload" value="1">
     <!-- <input type="hidden" name="business" value="sb-6ie6631042567@business.example.com"> -->
     <input type="hidden" name="business" value="okamumu@gmail.com">
@@ -22,37 +21,51 @@
     <input type="hidden" name="cancel_return" value="http://aparm2024-conf.github.io/info/index.html">
 
     <!-- Information -->
-    <label for="name">Name (Full name):</label>
-    <input type="text" id="name" name="name" required><br></br>
+    <div class="inform">
 
-    <!-- Registration number -->
+    <div class="inform-item">
+    <label for="name">Name (Full name):</label>
+    <input type="text" id="name" name="name" required>
+    </div>
+
+    <div class="inform-item">
     <label for="registrationNumber">Registration Number: </label>
     <input type="text" id="registrationNumber" name="registrationNumber" required>
+    </div>
     <p>(Please check the confirmation mail on the your resigration number.)</p>
+    </div>
 
     <!-- Conference Type Selection -->
     <div class="radio-group">
-        <label>Conference Type:</label><br></br>
-
+        <label>Conference Type:</label>
+        <div class="radio-item">
         <input type="radio" id="Regular" name="conferenceType" value="Regular" required>
-        <label for="Regular">Regular - 50,000JPY</label><br>
+        <label for="Regular">Regular - 50,000JPY</label>
+        </div>
+        <div class="radio-item">
         <input type="radio" id="student" name="conferenceType" value="Student" required>
         <label for="student">Student - 30,000JPY</label>
+        </div>
     </div>
 
+    <div class="tickets">
+        <div class="ticket-item">
     <!-- Additional Banquet Ticket -->
     <label for="banquetTickets">Additional Banquet Tickets (15,000JPY each):</label>
     <input type="number" id="banquetTickets" name="banquetTickets" value="0" min="0">
-    <br><br>
+    </div>
 
+    <div class="ticket-item">
     <!-- Additional Excursion Ticket -->
     <label for="excursionTickets">Additional Excursion Tickets (5,000JPY each):</label>
     <input type="number" id="excursionTickets" name="excursionTickets" value="0" min="0">
-    <br><br>
+    </div>
+    </div>
 
     <!-- Pay Now Button -->
     <input type="submit" value="Add Cart" onclick="return prepareCart()">
 </form>
+</div>
 
 <script>
 function prepareCart() {

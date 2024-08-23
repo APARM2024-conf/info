@@ -91,10 +91,10 @@ zoom = {
     day2a: '[<a href="https://us02web.zoom.us/j/83130918341?pwd=OYAv59NQ7a4yQp7rdCuVRPIMMyaXrR.1">Zoom link</a>]',
     day3a: '[<a href="https://us02web.zoom.us/j/86001891190?pwd=3R2ffcMh04iubjl9Q0mcBfSy6bx65Y.1">Zoom link</a>]',
     day4a: '[<a href="https://us02web.zoom.us/j/83563346564?pwd=i0pzRPQlYVAxbwdjaYW38si5zSp7QF.1">Zoom link</a>]',
-    day1b: '',
-    day2b: '',
-    day3b: '',
-    day4b: ''
+    day1b: '[<a href="https://us06web.zoom.us/j/89990849551?pwd=hLOeGtAZlXLGXyDCd872b8uOAhTN2h.1">Zoom link</a>]',
+    day2b: '[<a href="https://us06web.zoom.us/j/82267511928?pwd=15bo89D2FuahBRY22aK8XqRa0F6BB3.1">Zoom link</a>]',
+    day3b: '[<a href="https://us06web.zoom.us/j/89008175671?pwd=ES0kTbpQGsMkubCXGditN5S9vPJ3Aa.1">Zoom link</a>]',
+    day4b: '[<a href="https://us06web.zoom.us/j/86402435911?pwd=X6cZHiCJUbt4Ja3nk3DBmM9BaHA1b5.1">Zoom link</a>]'
 }
 
 while x = gets

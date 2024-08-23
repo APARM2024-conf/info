@@ -101,6 +101,10 @@ while x = gets
     if x =~ /Paper ID: ([0-9]+)/
         index = ("id" + $1).to_sym
         puts x.gsub("Paper ID: " + $1, urls[index])
+    elsif x =~ /Opening & Registration/
+        puts x.gsub("Opening & Registration", "Opening & Registration " + zoom[:day1a])
+    elsif x =~ /Closing/
+        puts x.gsub("Closing", "Closing " + zoom[:day4a])
     elsif x =~ /Keynote ([0-9])/
         num = $1.to_i
         if num == 1
